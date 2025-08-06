@@ -1,9 +1,9 @@
-# Landing page diseño
+# Landing page sections
 
 *Automatically synced with your [v0.dev](https://v0.dev) deployments*
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/sheremelias-9402s-projects/v0-landing-page-diseno)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/ewOlGYnNifD)
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/sheremelias-9402s-projects/v0-landing-page-sections)
+[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/5tFPTYHFG2q)
 
 ## Overview
 
@@ -14,13 +14,13 @@ Any changes you make to your deployed app will be automatically pushed to this r
 
 Your project is live at:
 
-**[https://vercel.com/sheremelias-9402s-projects/v0-landing-page-diseno](https://vercel.com/sheremelias-9402s-projects/v0-landing-page-diseno)**
+**[https://vercel.com/sheremelias-9402s-projects/v0-landing-page-sections](https://vercel.com/sheremelias-9402s-projects/v0-landing-page-sections)**
 
 ## Build your app
 
 Continue building your app on:
 
-**[https://v0.dev/chat/projects/ewOlGYnNifD](https://v0.dev/chat/projects/ewOlGYnNifD)**
+**[https://v0.dev/chat/projects/5tFPTYHFG2q](https://v0.dev/chat/projects/5tFPTYHFG2q)**
 
 ## How It Works
 

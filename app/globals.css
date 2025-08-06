@@ -121,3 +121,69 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom Carousel Animation */
+@keyframes carousel-rotate {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.carousel-scroll {
+  animation: carousel-rotate 25s linear infinite;
+}
+
+.carousel-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* Snake Animation Keyframes */
+@keyframes snake-horizontal {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes snake-vertical {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+/* Snake Animation Classes */
+.animate-snake-horizontal {
+  animation: snake-horizontal 0.8s ease-in-out forwards;
+}
+
+.animate-snake-vertical-delay-1 {
+  animation: snake-vertical 0.8s ease-in-out 0.8s forwards;
+  height: 0;
+}
+
+.animate-snake-horizontal-delay-2 {
+  animation: snake-horizontal 0.8s ease-in-out 1.6s forwards;
+  width: 0;
+}
+
+.animate-snake-vertical-delay-3 {
+  animation: snake-vertical 0.8s ease-in-out 2.4s forwards;
+  height: 0;
+}
+
+/* Restart animation on hover */
+.bg-gray-900\/50:hover .animate-snake-horizontal,
+.bg-gray-900\/50:hover .animate-snake-vertical-delay-1,
+.bg-gray-900\/50:hover .animate-snake-horizontal-delay-2,
+.bg-gray-900\/50:hover .animate-snake-vertical-delay-3 {
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
