@@ -55,7 +55,7 @@ export default function AdventoLanding() {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-white text-black px-8 py-4 text-lg"
+              className="border-white text-white px-8 py-4 text-lg"
             >
               Ver planes
             </Button>
