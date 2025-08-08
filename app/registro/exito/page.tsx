@@ -30,7 +30,7 @@ export default function RegistroExitoPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="max-w-2xl mx-auto mb-12">
             {/* What's Next */}
             <Card className="bg-gray-800/90 border-white/20">
               <CardHeader>
@@ -57,9 +57,9 @@ export default function RegistroExitoPage() {
                     2
                   </div>
                   <div>
-                    <h3 className="text-white font-medium">Llamada de Bienvenida</h3>
+                    <h3 className="text-white font-medium">Haz click en el link</h3>
                     <p className="text-gray-400 text-sm">
-                      Nuestro equipo te contactará en las próximas 24 horas
+                      Haz click en el link que te llegará por correo
                     </p>
                   </div>
                 </div>
@@ -69,52 +69,11 @@ export default function RegistroExitoPage() {
                     3
                   </div>
                   <div>
-                    <h3 className="text-white font-medium">Demo Personalizada</h3>
+                    <h3 className="text-white font-medium">Activa tu cuenta de STARTER</h3>
                     <p className="text-gray-400 text-sm">
-                      Sesión gratuita adaptada a tu negocio
+                      Activa tu cuenta de Advento STARTER
                     </p>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Resources */}
-            <Card className="bg-gray-800/90 border-white/20">
-              <CardHeader>
-                <CardTitle className="text-white flex items-center">
-                  <Mail className="h-6 w-6 mr-3 text-green-400" />
-                  Mientras Tanto...
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4 text-left">
-                <div className="p-4 bg-gray-700/50 rounded-lg">
-                  <h3 className="text-white font-medium mb-2">📚 Centro de Recursos</h3>
-                  <p className="text-gray-400 text-sm mb-3">
-                    Explora guías y casos de éxito
-                  </p>
-                  <Button variant="outline" size="sm" className="border-gray-600 text-gray-300 hover:bg-gray-600">
-                    Explorar Recursos
-                  </Button>
-                </div>
-                
-                <div className="p-4 bg-gray-700/50 rounded-lg">
-                  <h3 className="text-white font-medium mb-2">🎥 Video Tour</h3>
-                  <p className="text-gray-400 text-sm mb-3">
-                    Conoce Advento en 5 minutos
-                  </p>
-                  <Button variant="outline" size="sm" className="border-gray-600 text-gray-300 hover:bg-gray-600">
-                    Ver Video
-                  </Button>
-                </div>
-                
-                <div className="p-4 bg-gray-700/50 rounded-lg">
-                  <h3 className="text-white font-medium mb-2">💬 Comunidad</h3>
-                  <p className="text-gray-400 text-sm mb-3">
-                    Únete a otros empresarios
-                  </p>
-                  <Button variant="outline" size="sm" className="border-gray-600 text-gray-300 hover:bg-gray-600">
-                    Unirse Ahora
-                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -140,22 +99,14 @@ export default function RegistroExitoPage() {
           {/* Contact Info */}
           <div className="bg-gray-800/50 rounded-2xl p-8 border border-white/10">
             <h3 className="text-white font-semibold mb-4">¿Tienes preguntas?</h3>
-            <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-300">
+            <div className="grid md:grid-cols-1 gap-4 text-sm text-gray-300">
               <div className="text-center">
                 <Mail className="w-6 h-6 text-yellow-400 mx-auto mb-2" />
                 <p className="font-medium text-white">Email</p>
-                <p>hola@advento.com</p>
+                <p>adventoco@gmail.com</p>
               </div>
-              <div className="text-center">
-                <Calendar className="w-6 h-6 text-green-400 mx-auto mb-2" />
-                <p className="font-medium text-white">Horario</p>
-                <p>Lun-Vie 9:00-18:00</p>
-              </div>
-              <div className="text-center">
-                <CheckCircle className="w-6 h-6 text-blue-400 mx-auto mb-2" />
-                <p className="font-medium text-white">Respuesta</p>
-                <p>Menos de 2 horas</p>
-              </div>
+            
+              
             </div>
           </div>
         </div>
