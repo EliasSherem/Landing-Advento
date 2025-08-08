@@ -14,7 +14,7 @@ import Header from "@/components/header";
 import Link from "next/link";
 
 const HeroSticker = () => (
-  <div className="absolute -top-6 -right-4 md:-right-10 transform rotate-12 hover:scale-105 transition-transform select-none">
+  <div className="absolute bottom-0 right-0 transform translate-x-8 translate-y-8 rotate-12 hover:scale-105 transition-transform select-none z-20 pointer-events-none">
     <div className="bg-white/90 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-lg border border-yellow-400/30">
       <span className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-green-400 bg-clip-text text-transparent">$0/mes</span>
     </div>
@@ -587,11 +587,11 @@ export default function Starter() {
           <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(250,204,21,0.25),transparent_40%),radial-gradient(ellipse_at_bottom_left,rgba(34,197,94,0.25),transparent_40%)]" />
           
           {/* Laptop background image */}
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full hidden lg:block pointer-events-none">
+          <div className="absolute right-[-10%] top-1/2 -translate-y-1/2 w-full h-full hidden lg:block pointer-events-none">
             <img
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/22---Laptop-Mockup-V01%5B1%5D-n4m9NeXXBbbblpB20IuSHWaJU4ZonX.png"
               alt=""
-              className="absolute right-0 top-1/2 -translate-y-1/2 w-full max-w-2xl opacity-30 select-none"
+              className="absolute right-0 top-1/2 -translate-y-1/2 w-full max-w-4xl opacity-30 select-none"
               loading="eager"
             />
           </div>
@@ -625,8 +625,8 @@ export default function Starter() {
                   <Button variant="outline" className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg" size="lg" asChild>
                     <a href="#crear-en-segundos">Ver cómo funciona</a>
                   </Button>
-                  <HeroSticker />
                 </div>
+                <HeroSticker />
                 <div className="mt-8 flex flex-wrap gap-3 text-sm">
                   {['Sin contrato', 'Cancela cuando quieras', 'Transparencia total'].map((c) => (
                     <span key={c} className="border border-green-400/30 bg-green-400/10 text-green-400 rounded-full px-4 py-2">

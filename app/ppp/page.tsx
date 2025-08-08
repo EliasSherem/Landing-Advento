@@ -37,6 +37,79 @@ export default function PPPPage() {
             <div className="relative">
               <div className="bg-gradient-to-br from-yellow-500/10 to-green-500/10 rounded-3xl p-8 border border-yellow-500/20">
                 <div className="h-96 rounded-xl bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 relative overflow-hidden border border-white/20">
+                  {/* Background Image with Gradient Overlay */}
+                  <div className="absolute inset-0 bg-cover bg-center" style={{
+                    backgroundImage: 'url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")'
+                  }}>
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/30 via-pink-500/20 to-transparent"></div>
+                  </div>
+                  
+                  {/* Dashboard Content */}
+                  <div className="relative z-10 p-6 h-full flex flex-col">
+                    {/* Header */}
+                    <div className="text-center mb-6">
+                      <h3 className="text-2xl font-bold text-white mb-2">¿Qué vas a anunciar hoy?</h3>
+                      <p className="text-white/80 text-sm">Introduzca cualquier texto para crear anuncios relevantes en más de 40 idiomas.</p>
+                    </div>
+                    
+                    {/* Input Section */}
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="flex-1 bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20">
+                        <div className="flex items-center gap-2">
+                          <span className="text-white font-medium text-sm">AI</span>
+                          <input 
+                            type="text" 
+                            className="bg-transparent text-white flex-1 outline-none text-sm"
+                            placeholder="Describe tu producto o servicio..."
+                          />
+                        </div>
+                      </div>
+                      <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium">
+                        Generar
+                      </button>
+                      <button className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg text-sm font-medium">
+                        Guardado
+                      </button>
+                    </div>
+                    
+                    {/* Platform Selection */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-2">
+                        <input type="checkbox" className="w-4 h-4" />
+                        <span className="text-white text-sm">Select All</span>
+                      </div>
+                      <select className="bg-white/10 text-white text-sm rounded-lg px-3 py-1 border border-white/20">
+                        <option>Plataforma</option>
+                        <option>All</option>
+                      </select>
+                    </div>
+                    
+                                         {/* Platform Grid */}
+                     <div className="grid grid-cols-3 gap-2 flex-1">
+                       {[
+                         { name: 'Meta', color: 'bg-blue-500', icon: 'M' },
+                         { name: 'Calls', color: 'bg-blue-600', icon: 'C' },
+                         { name: 'Messenger', color: 'bg-purple-500', icon: 'M' },
+                         { name: 'WhatsApp', color: 'bg-green-500', icon: 'W' },
+                         { name: 'Instagram', color: 'bg-gradient-to-r from-orange-400 to-pink-500', icon: 'I' },
+                         { name: 'Google', color: 'bg-gradient-to-r from-blue-500 to-green-500', icon: 'G' },
+                         { name: 'Display', color: 'bg-green-600', icon: 'D' },
+                         { name: 'PMax', color: 'bg-blue-700', icon: 'P' },
+                         { name: 'YouTube', color: 'bg-red-500', icon: 'Y' }
+                       ].map((platform, index) => (
+                         <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg p-2 border border-white/20 relative">
+                           <div className={`w-6 h-6 ${platform.color} rounded flex items-center justify-center mb-1`}>
+                             <span className="text-white text-xs font-bold">{platform.icon}</span>
+                           </div>
+                           <span className="text-white text-xs truncate block">{platform.name}</span>
+                           <div className="absolute bottom-0.5 right-0.5 w-3 h-3 bg-orange-500 rounded flex items-center justify-center">
+                             <span className="text-white text-xs">✓</span>
+                           </div>
+                         </div>
+                       ))}
+                     </div>
+                  </div>
+                  
                   <div className="absolute bottom-4 left-4 font-bold text-yellow-400 bg-gray-900/90 px-3 py-2 rounded-lg border border-yellow-400/30 text-sm">
                     TU DASHBOARD
                   </div>
@@ -135,7 +208,7 @@ export default function PPPPage() {
       <section className="px-6 py-20 bg-gradient-to-b from-slate-800 to-slate-900">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-6 text-white">💰 ¿Cuánto puedes ganar?</h2>
-          <p className="text-xl text-gray-300 mb-8">Tú decides cuánto cobrar. Con márgenes de hasta el <strong className="text-yellow-400">90%</strong>, el límite lo pones tú.</p>
+          <p className="text-xl text-gray-300 mb-8">Tú decides cuánto cobrar. Con márgenes de hasta el <strong className="text-yellow-400">98%</strong>, el límite lo pones tú.</p>
           <div className="overflow-x-auto">
             <table className="w-full bg-gray-800 border border-gray-600 rounded-lg shadow-xl">
               <thead>
@@ -242,50 +315,18 @@ export default function PPPPage() {
       </section>
 
       {/* Bonos */}
-      <section className="px-6 py-20 bg-gradient-to-b from-slate-800 to-slate-900">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-8 text-white">🎁 Bono especial (solo hoy)</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="bg-gray-800/90 border-white/20 text-center">
-              <CardContent className="pt-6">
-                <h3 className="text-lg font-bold text-white mb-2">✨ Plantillas</h3>
-                <p className="text-gray-300">Cierra a tus primeros clientes.</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-gray-800/90 border-white/20 text-center">
-              <CardContent className="pt-6">
-                <h3 className="text-lg font-bold text-white mb-2">📣 Scripts</h3>
-                <p className="text-gray-300">Prospección y ventas probadas.</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-gray-800/90 border-white/20 text-center">
-              <CardContent className="pt-6">
-                <h3 className="text-lg font-bold text-white mb-2">🧑‍🏫 Mini curso</h3>
-                <p className="text-gray-300">Onboarding paso a paso.</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-gray-800/90 border-white/20 text-center">
-              <CardContent className="pt-6">
-                <h3 className="text-lg font-bold text-white mb-2">🎨 Branding editable</h3>
-                <p className="text-gray-300">Kit listo para personalizar.</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      
 
       {/* CTA Final */}
       <section className="px-6 py-20">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-br from-yellow-500/10 to-green-500/10 rounded-3xl p-12 border border-yellow-500/20">
-            <Badge className="bg-yellow-400/20 text-yellow-400 border-yellow-400/30 mb-6">Cupos limitados este mes</Badge>
+            <Badge className="bg-yellow-400/20 text-yellow-400 border-yellow-400/30 mb-6 px-6 py-3 text-lg">¡Cupos limitados este mes!</Badge>
             <h2 className="text-4xl font-bold mb-6 text-white">
-              🔥 ¡Inicia hoy por solo <span className="bg-gradient-to-r from-yellow-400 to-green-400 bg-clip-text text-transparent">$297 USD/mes</span>!
+              🔥 ¡Inicia hoy desde <span className="bg-gradient-to-r from-yellow-400 to-green-400 bg-clip-text text-transparent">$449 USD/mes</span>!
             </h2>
             <p className="text-xl text-gray-300 mb-6">Reserva tu marca y lanza tu agencia en días, no meses.</p>
-            <p className="text-2xl font-bold bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent mb-8">
-              🎉 Si te registras hoy, ¡es completamente GRATIS el primer mes!
-            </p>
+            
             <Button className="bg-gradient-to-r from-yellow-400 to-green-400 text-slate-900 font-semibold hover:from-yellow-500 hover:to-green-500 text-lg px-10 py-5 mb-4">
               Quiero mi agencia White Label
             </Button>
