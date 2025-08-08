@@ -398,6 +398,10 @@ export default function PPPPage() {
             Únete a nuestro programa de partners premium y comienza a generar ingresos recurrentes hoy mismo
           </p>
           
+          <p className="text-2xl font-bold bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent mb-8">
+            🎉 Si te registras hoy, ¡es completamente GRATIS!
+          </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button className="bg-gradient-to-r from-yellow-400 to-orange-400 text-black font-semibold hover:from-yellow-500 hover:to-orange-500 text-lg px-8 py-4">
               <Crown className="w-5 h-5 mr-2" />
