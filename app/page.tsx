@@ -95,12 +95,13 @@ const CreateInSeconds = () => (
                   <div className="text-xl font-semibold">Vista previa Meta</div>
                   <Badge className="bg-blue-100 text-blue-800">Ads</Badge>
                 </div>
-                <div className="rounded-xl h-40 bg-gradient-to-br from-blue-50 to-purple-50 mb-6 flex items-center justify-center border border-gray-200">
-                  <div className="text-gray-500 text-center">
-                    <div className="w-16 h-16 bg-gray-200 rounded-lg mx-auto mb-2"></div>
-                    <p className="text-sm">Vista previa del anuncio</p>
-                  </div>
-                </div>
+                <img
+                  src="/meta-preview.webp"
+                  alt="Vista previa de anuncio Meta creada en segundos con Starter"
+                  loading="lazy"
+                  decoding="async"
+                  className="rounded-xl border border-gray-200 shadow-sm w-full h-auto mb-4"
+                />
                 <div className="grid grid-cols-3 gap-4">
                   <div className="rounded-lg h-16 bg-gray-100 flex items-center justify-center">
                     <span className="text-xs text-gray-500">Variación A</span>
@@ -158,17 +159,13 @@ const CreateInSeconds = () => (
             <Card className="p-8 rounded-2xl bg-white text-slate-900 shadow-lg">
               <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }}>
                 <div className="text-xl font-semibold mb-6">Vista previa Google</div>
-                <div className="space-y-4">
-                  <div className="rounded-lg h-8 bg-gradient-to-r from-blue-100 to-green-100 flex items-center px-4">
-                    <span className="text-sm text-gray-600">Headline principal optimizado</span>
-                  </div>
-                  <div className="rounded-lg h-8 bg-gradient-to-r from-green-100 to-yellow-100 flex items-center px-4">
-                    <span className="text-sm text-gray-600">Descripción con keywords</span>
-                  </div>
-                  <div className="rounded-lg h-8 bg-gradient-to-r from-yellow-100 to-orange-100 flex items-center px-4">
-                    <span className="text-sm text-gray-600">Extensiones automáticas</span>
-                  </div>
-                </div>
+                <img
+                  src="/google-preview.webp"
+                  alt="Vista previa de anuncio Google creada en segundos con Starter"
+                  loading="lazy"
+                  decoding="async"
+                  className="rounded-xl border border-gray-200 shadow-sm w-full h-auto mb-4"
+                />
                 <p className="text-xs text-gray-500 mt-4">Preview ilustrativa. UI tipo Google Ads.</p>
               </motion.div>
             </Card>
@@ -215,12 +212,13 @@ const CreateInSeconds = () => (
             <Card className="p-8 rounded-2xl bg-white text-slate-900 shadow-lg">
               <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }}>
                 <div className="text-xl font-semibold mb-6">Vista previa TikTok</div>
-                <div className="rounded-xl h-48 bg-gradient-to-br from-pink-50 to-purple-50 mb-6 flex items-center justify-center border border-gray-200">
-                  <div className="text-gray-500 text-center">
-                    <div className="w-20 h-32 bg-gray-200 rounded-lg mx-auto mb-2"></div>
-                    <p className="text-sm">Video vertical</p>
-                  </div>
-                </div>
+                <img
+                  src="/tiktok-preview.webp"
+                  alt="Vista previa de anuncio TikTok creada en segundos con Starter"
+                  loading="lazy"
+                  decoding="async"
+                  className="rounded-xl border border-gray-200 shadow-sm w-full h-auto mb-4"
+                />
                 <div className="grid grid-cols-2 gap-4">
                   <div className="rounded-lg h-16 bg-gray-100 flex items-center justify-center">
                     <span className="text-xs text-gray-500">Hook A</span>
@@ -587,6 +585,17 @@ export default function Starter() {
         {/* Hero */}
         <section className="relative overflow-hidden">
           <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(250,204,21,0.25),transparent_40%),radial-gradient(ellipse_at_bottom_left,rgba(34,197,94,0.25),transparent_40%)]" />
+          
+          {/* Laptop background image */}
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full hidden lg:block pointer-events-none">
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/22---Laptop-Mockup-V01%5B1%5D-n4m9NeXXBbbblpB20IuSHWaJU4ZonX.png"
+              alt=""
+              className="absolute right-0 top-1/2 -translate-y-1/2 w-full max-w-2xl opacity-30 select-none"
+              loading="eager"
+            />
+          </div>
+          
           <div className="relative z-10 px-6 pt-20 pb-32">
             <div className="max-w-6xl mx-auto">
               <div className="max-w-4xl">
