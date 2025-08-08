@@ -69,9 +69,11 @@ export default function Header() {
         {/* Cart and CTA */}
         <div className="hidden md:flex items-center space-x-4">
           <CartIcon />
-          <Button className="bg-gradient-to-r from-yellow-400 to-green-400 text-slate-900 font-semibold hover:from-yellow-500 hover:to-green-500 transition-all duration-200">
-            Empezar Ahora
-          </Button>
+          <Link href="/registro">
+            <Button className="bg-gradient-to-r from-yellow-400 to-green-400 text-slate-900 font-semibold hover:from-yellow-500 hover:to-green-500 transition-all duration-200">
+              Empezar Ahora
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -129,9 +131,11 @@ export default function Header() {
 
             <div className="flex items-center space-x-4 pt-4">
               <CartIcon />
-              <Button className="bg-gradient-to-r from-yellow-400 to-green-400 text-slate-900 font-semibold hover:from-yellow-500 hover:to-green-500 transition-all duration-200">
-                Empezar Ahora
-              </Button>
+              <Link href="/registro">
+                <Button className="bg-gradient-to-r from-yellow-400 to-green-400 text-slate-900 font-semibold hover:from-yellow-500 hover:to-green-500 transition-all duration-200">
+                  Empezar Ahora
+                </Button>
+              </Link>
             </div>
           </nav>
         </div>

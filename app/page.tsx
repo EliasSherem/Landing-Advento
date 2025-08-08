@@ -45,13 +45,15 @@ export default function AdventoLanding() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-green-400 to-cyan-400 text-slate-900 font-semibold hover:from-green-500 hover:to-cyan-500 transition-all duration-200 px-8 py-4 text-lg"
-            >
-              <Hand className="w-5 h-5 mr-2" />
-              Empieza ahora
-            </Button>
+            <Link href="/registro">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-green-400 to-cyan-400 text-slate-900 font-semibold hover:from-green-500 hover:to-cyan-500 transition-all duration-200 px-8 py-4 text-lg"
+              >
+                <Hand className="w-5 h-5 mr-2" />
+                Empieza ahora
+              </Button>
+            </Link>
             <Button 
               size="lg" 
               variant="outline" 
@@ -598,14 +600,16 @@ export default function AdventoLanding() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-yellow-400 to-cyan-400 text-slate-900 font-semibold hover:from-yellow-500 hover:to-cyan-500 transition-all duration-200 px-8 py-4 text-lg"
-              >
-                <Settings className="w-5 h-5 mr-2" />
-                Ver Advento PLUS
-                <Sparkles className="w-5 h-5 ml-2" />
-              </Button>
+              <Link href="/registro">
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-yellow-400 to-cyan-400 text-slate-900 font-semibold hover:from-yellow-500 hover:to-cyan-500 transition-all duration-200 px-8 py-4 text-lg"
+                >
+                  <Settings className="w-5 h-5 mr-2" />
+                  Empezar Ahora
+                  <Sparkles className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
               <Button 
                 size="lg" 
                 className="bg-gray-600 text-white hover:bg-gray-500 hover:scale-103 transition-all duration-200 px-8 py-4 text-lg"

@@ -6,418 +6,332 @@ import Link from "next/link";
 import Header from "@/components/header"
 
 export default function PPPPage() {
-  const partnerTiers = [
-    { name: "Bronze Partner", flag: "🥉", commission: "15%", requirements: "5+ referidos/mes" },
-    { name: "Silver Partner", flag: "🥈", commission: "20%", requirements: "15+ referidos/mes" },
-    { name: "Gold Partner", flag: "🥇", commission: "25%", requirements: "30+ referidos/mes" },
-    { name: "Platinum Partner", flag: "💎", commission: "30%", requirements: "50+ referidos/mes" },
-    { name: "Diamond Partner", flag: "💍", commission: "35%", requirements: "100+ referidos/mes" }
-  ];
-
-  const partnerBenefits = [
-    {
-      tier: "Bronze",
-      commission: "15%",
-      bonuses: ["Material de marketing", "Soporte por email"],
-      monthlyBonus: "$100",
-      requirements: "5+ referidos/mes"
-    },
-    {
-      tier: "Silver",
-      commission: "20%",
-      bonuses: ["Todo lo anterior", "Webinars exclusivos", "Manager dedicado"],
-      monthlyBonus: "$300",
-      requirements: "15+ referidos/mes"
-    },
-    {
-      tier: "Gold",
-      commission: "25%",
-      bonuses: ["Todo lo anterior", "Acceso beta", "Co-marketing"],
-      monthlyBonus: "$750",
-      requirements: "30+ referidos/mes"
-    },
-    {
-      tier: "Platinum",
-      commission: "30%",
-      bonuses: ["Todo lo anterior", "Eventos VIP", "Consultoría 1:1"],
-      monthlyBonus: "$1,500",
-      requirements: "50+ referidos/mes"
-    }
-  ];
-
-  const benefits = [
-    {
-      icon: <Crown className="w-8 h-8" />,
-      title: "Comisiones Premium",
-      description: "Gana hasta 35% de comisión recurrente por cada cliente que refiereas a Advento."
-    },
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: "Red de Partners",
-      description: "Únete a una comunidad exclusiva de partners exitosos y comparte estrategias."
-    },
-    {
-      icon: <Shield className="w-8 h-8" />,
-      title: "Soporte Dedicado",
-      description: "Acceso a managers dedicados y soporte prioritario para maximizar tus ventas."
-    },
-    {
-      icon: <TrendingUp className="w-8 h-8" />,
-      title: "Crecimiento Escalable",
-      description: "Sistema de niveles que premia tu crecimiento con mejores comisiones y beneficios."
-    }
-  ];
-
-  const steps = [
-    {
-      number: "1",
-      title: "Aplica al programa",
-      description: "Completa el formulario de aplicación y cuéntanos sobre tu experiencia en marketing."
-    },
-    {
-      number: "2",
-      title: "Recibe aprobación",
-      description: "Nuestro equipo revisará tu aplicación y te contactará en 24-48 horas."
-    },
-    {
-      number: "3",
-      title: "Comienza a referir",
-      description: "Recibe tus materiales de marketing y comienza a generar ingresos inmediatamente."
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-slate-900 text-white">
       <Header />
       
       {/* Hero Section */}
       <section className="px-6 py-20">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="flex items-center justify-center mb-8">
-            <Crown className="w-16 h-16 text-yellow-400 mr-4" />
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-              <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
-                PPP
-              </span>
-            </h1>
-          </div>
-          
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Premium Partner Program
-          </h2>
-          
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Únete a nuestro programa de partners exclusivo y genera ingresos recurrentes 
-            refiriendo clientes a Advento. Comisiones de hasta 35% y beneficios premium.
-          </p>
-
-          <div className="flex items-center justify-center space-x-8 mb-12">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-yellow-400">35%</div>
-              <div className="text-gray-300">Comisión máxima</div>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
+            <div>
+              <div className="flex gap-2.5 flex-wrap mb-6">
+                <Badge className="bg-yellow-400/20 text-yellow-400 border-yellow-400/30">Tecnología de primer nivel</Badge>
+                <Badge className="bg-green-400/20 text-green-400 border-green-400/30">Sin experiencia técnica</Badge>
+              </div>
+              <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 text-white">
+                Lanza tu propia agencia de marketing automatizada
+              </h1>
+              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                Convierte el poder de la inteligencia artificial en tu negocio y genera ingresos desde el primer día con una plataforma White Label bajo tu marca.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button className="bg-gradient-to-r from-yellow-400 to-green-400 text-slate-900 font-semibold hover:from-yellow-500 hover:to-green-500 text-lg px-8 py-4">
+                  Quiero mi agencia White Label
+                </Button>
+                <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 text-lg px-8 py-4">
+                  Ver cómo funciona
+                </Button>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-orange-400">$10K+</div>
-              <div className="text-gray-300">Ingresos mensuales top partners</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-red-400">500+</div>
-              <div className="text-gray-300">Partners activos</div>
+            <div className="relative">
+              <div className="bg-gradient-to-br from-yellow-500/10 to-green-500/10 rounded-3xl p-8 border border-yellow-500/20">
+                <div className="h-96 rounded-xl bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 relative overflow-hidden border border-white/20">
+                  <div className="absolute bottom-4 left-4 font-bold text-yellow-400 bg-gray-900/90 px-3 py-2 rounded-lg border border-yellow-400/30 text-sm">
+                    TU DASHBOARD
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* What is PPP Section */}
+      {/* Qué es */}
       <section className="px-6 py-20 bg-gradient-to-b from-slate-900 to-slate-800">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-6">
-                <span className="text-white">¿Qué es el </span>
-                <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
-                  Premium Partner Program?
-                </span>
-              </h2>
-              
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Nuestro programa de partners premium está diseñado para emprendedores, agencias y 
-                profesionales del marketing que quieren generar ingresos recurrentes significativos.
-              </p>
-              
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-yellow-400/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <DollarSign className="w-4 h-4 text-yellow-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">Comisiones recurrentes</h3>
-                    <p className="text-gray-300">
-                      Gana comisiones mensuales recurrentes por cada cliente que permanezca activo.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-orange-400/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <TrendingUp className="w-4 h-4 text-orange-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">Sistema de niveles</h3>
-                    <p className="text-gray-300">
-                      Mientras más refiereas, mejores comisiones y beneficios exclusivos obtienes.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-red-400/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <Crown className="w-4 h-4 text-red-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">Beneficios premium</h3>
-                    <p className="text-gray-300">
-                      Acceso a herramientas exclusivas, eventos VIP y soporte personalizado.
-                    </p>
-                  </div>
-                </div>
+          <h2 className="text-4xl font-bold mb-6 text-white">🚀 ¿Qué es esto?</h2>
+          <p className="text-xl text-gray-300 mb-8">Con nuestra solución White Label de Advento tendrás una plataforma <strong className="text-white">todo-en-uno</strong> para vender marketing bajo tu marca.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="flex gap-3 items-start bg-gray-800/90 border border-white/20 rounded-xl p-4">
+              <span className="text-green-400">✅</span>
+              <div>
+                <strong className="text-white">Tu marca, tu dominio</strong><br/>
+                <span className="text-gray-300">Logo, colores y URL propios.</span>
               </div>
             </div>
-
-            <div className="relative">
-              <div className="bg-gradient-to-br from-yellow-500/10 to-orange-500/10 rounded-3xl p-8 border border-yellow-500/20">
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-white mb-4">Ejemplo de Ingresos</h3>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="bg-gray-800/90 rounded-xl p-4 border border-white/20">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <span className="text-2xl">🥉</span>
-                        <div>
-                          <p className="text-white font-medium">Bronze Partner</p>
-                          <p className="text-gray-400 text-sm">10 clientes referidos</p>
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-2xl font-bold text-white">$675</p>
-                        <p className="text-gray-400 text-sm">USD/mes</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex justify-center">
-                    <ArrowRight className="w-6 h-6 text-gray-400 transform rotate-90" />
-                  </div>
-                  
-                  <div className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-xl p-4 border border-yellow-500/30">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <span className="text-2xl">💎</span>
-                        <div>
-                          <p className="text-white font-medium">Platinum Partner</p>
-                          <p className="text-yellow-400 text-sm">100 clientes referidos</p>
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-2xl font-bold text-yellow-400">$14,850</p>
-                        <p className="text-gray-400 text-sm">USD/mes</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <div className="flex gap-3 items-start bg-gray-800/90 border border-white/20 rounded-xl p-4">
+              <span className="text-green-400">✅</span>
+              <div>
+                <strong className="text-white">Definir precios</strong><br/>
+                <span className="text-gray-300">Crea planes y márgenes a tu medida.</span>
+              </div>
+            </div>
+            <div className="flex gap-3 items-start bg-gray-800/90 border border-white/20 rounded-xl p-4">
+              <span className="text-green-400">✅</span>
+              <div>
+                <strong className="text-white">Sin técnico</strong><br/>
+                <span className="text-gray-300">Listo para usar, enfoque 100% en ventas.</span>
+              </div>
+            </div>
+            <div className="flex gap-3 items-start bg-gray-800/90 border border-white/20 rounded-xl p-4">
+              <span className="text-green-400">✅</span>
+              <div>
+                <strong className="text-white">Todo en un lugar</strong><br/>
+                <span className="text-gray-300">Ads, SEO, reportes y automatizaciones.</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Partner Tiers */}
-      <section className="px-6 py-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
-                Niveles de Partners
-              </span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Mientras más refiereas, mejores beneficios y comisiones obtienes
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-            {partnerTiers.map((tier, index) => (
-              <Card key={index} className="bg-gray-900/80 border-white/20 text-center hover:bg-gray-800/90 transition-all duration-300 hover:scale-105">
-                <CardContent className="pt-6">
-                  <div className="text-4xl mb-4">{tier.flag}</div>
-                  <h3 className="text-white font-bold text-lg mb-2">{tier.name}</h3>
-                  <Badge className="bg-yellow-400/20 text-yellow-400 border-yellow-400/30 mb-3">
-                    {tier.commission} comisión
-                  </Badge>
-                  <p className="text-gray-300 text-sm">{tier.requirements}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Partner Benefits Comparison */}
-      <section className="px-6 py-20 bg-gradient-to-b from-slate-800 to-slate-900">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">
-              <span className="text-white">Beneficios por </span>
-              <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
-                nivel
-              </span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Cada nivel desbloquea nuevos beneficios y oportunidades de ingresos
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {partnerBenefits.map((benefit, index) => (
-              <Card key={index} className="bg-gray-900/80 border-white/20">
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-xl text-white">{benefit.tier} Partner</CardTitle>
-                    <Badge className="bg-yellow-400/20 text-yellow-400 border-yellow-400/30">
-                      {benefit.commission} comisión
-                    </Badge>
-                  </div>
-                  <CardDescription className="text-gray-300">
-                    {benefit.requirements}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-300">Bono mensual:</span>
-                      <span className="text-xl font-bold text-yellow-400">{benefit.monthlyBonus}</span>
-                    </div>
-                    <div className="border-t border-white/20 pt-4">
-                      <h4 className="text-white font-medium mb-2">Beneficios incluidos:</h4>
-                      <ul className="space-y-1">
-                        {benefit.bonuses.map((bonus, bonusIndex) => (
-                          <li key={bonusIndex} className="text-gray-300 text-sm flex items-center">
-                            <Check className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
-                            {bonus}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits */}
+      {/* Features */}
       <section className="px-6 py-20">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">
-              <span className="text-white">¿Por qué unirte al </span>
-              <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
-                PPP?
-              </span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {benefits.map((benefit, index) => (
-              <Card key={index} className="bg-gray-900/80 border-white/20 group hover:bg-gray-800/90 transition-all duration-300">
-                <CardContent className="pt-8">
-                  <div className="text-yellow-400 mb-6 flex justify-center group-hover:scale-110 transition-transform duration-300">
-                    {benefit.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-4 text-center">{benefit.title}</h3>
-                  <p className="text-gray-300 text-center leading-relaxed">{benefit.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <h2 className="text-4xl font-bold mb-6 text-white">✅ ¿Qué incluye tu agencia White Label?</h2>
+          <p className="text-xl text-gray-300 mb-8">Todo lo necesario para vender como una agencia profesional desde el día uno.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card className="bg-gray-800/90 border-white/20">
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-bold text-white mb-3">🌐 Marca 100%</h3>
+                <p className="text-gray-300">Dominio, logo y colores personalizados.</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-gray-800/90 border-white/20">
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-bold text-white mb-3">🤖 IA de marketing</h3>
+                <p className="text-gray-300">Generación de anuncios, SEO y más.</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-gray-800/90 border-white/20">
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-bold text-white mb-3">📈 Dashboard de clientes</h3>
+                <p className="text-gray-300">Transparencia total de resultados.</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-gray-800/90 border-white/20">
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-bold text-white mb-3">💳 Pagos integrados</h3>
+                <p className="text-gray-300">Planes, suscripciones y cobros simples.</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-gray-800/90 border-white/20">
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-bold text-white mb-3">🔄 Automatizaciones</h3>
+                <p className="text-gray-300">Campañas, reportes y flujos 24/7.</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-gray-800/90 border-white/20">
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-bold text-white mb-3">🧩 Integraciones clave</h3>
+                <p className="text-gray-300">Google, Meta, TikTok, Shopify, y más.</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* How it works */}
+      {/* Pricing */}
       <section className="px-6 py-20 bg-gradient-to-b from-slate-800 to-slate-900">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">
-              <span className="text-white">¿Cómo </span>
-              <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
-                funciona?
-              </span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Unirte al Premium Partner Program es simple y rápido
-            </p>
+          <h2 className="text-4xl font-bold mb-6 text-white">💰 ¿Cuánto puedes ganar?</h2>
+          <p className="text-xl text-gray-300 mb-8">Tú decides cuánto cobrar. Con márgenes de hasta el <strong className="text-yellow-400">90%</strong>, el límite lo pones tú.</p>
+          <div className="overflow-x-auto">
+            <table className="w-full bg-gray-800 border border-gray-600 rounded-lg shadow-xl">
+              <thead>
+                <tr className="border-gray-700">
+                  <th className="text-white font-semibold p-4 text-left bg-gray-700">Clientes activos</th>
+                  <th className="text-white font-semibold p-4 text-left bg-gray-700">Ingreso mensual (USD)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-gray-700">
+                  <td className="text-white p-4">10</td>
+                  <td className="text-white p-4">$1,000 – $3,000</td>
+                </tr>
+                <tr className="border-gray-700">
+                  <td className="text-white p-4">50</td>
+                  <td className="text-white p-4">$5,000 – $15,000</td>
+                </tr>
+                <tr className="border-gray-700">
+                  <td className="text-white p-4">100</td>
+                  <td className="text-white p-4">$10,000+</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
+          <p className="text-gray-400 text-sm mt-4">Ejemplos estimados. Tus resultados pueden variar según precios y mezcla de servicios.</p>
+        </div>
+      </section>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
-            {steps.map((step, index) => (
-              <div key={index} className="text-center relative">
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
-                    <span className="text-black font-bold text-sm">{step.number}</span>
-                  </div>
-                </div>
-                
-                <div className="w-20 h-20 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-3xl flex items-center justify-center mx-auto mb-6 border border-yellow-500/20">
-                  {step.number === "1" && <Target className="w-10 h-10 text-yellow-400" />}
-                  {step.number === "2" && <Award className="w-10 h-10 text-orange-400" />}
-                  {step.number === "3" && <Star className="w-10 h-10 text-red-400" />}
-                </div>
-                
-                <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
-                <p className="text-gray-300 max-w-xs">{step.description}</p>
+      {/* Para quién */}
+      <section className="px-6 py-20">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-6 text-white">👥 ¿Para quién es esto?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="flex gap-3 items-start bg-gray-800/90 border border-white/20 rounded-xl p-4">
+              <span className="text-2xl">🎯</span>
+              <div>
+                <strong className="text-white">Freelancers</strong><br/>
+                <span className="text-gray-300">Listos para escalar ingresos.</span>
               </div>
-            ))}
+            </div>
+            <div className="flex gap-3 items-start bg-gray-800/90 border border-white/20 rounded-xl p-4">
+              <span className="text-2xl">🏢</span>
+              <div>
+                <strong className="text-white">Agencias</strong><br/>
+                <span className="text-gray-300">Que buscan automatizar la operación.</span>
+              </div>
+            </div>
+            <div className="flex gap-3 items-start bg-gray-800/90 border border-white/20 rounded-xl p-4">
+              <span className="text-2xl">💼</span>
+              <div>
+                <strong className="text-white">Emprendedores</strong><br/>
+                <span className="text-gray-300">Ingresos recurrentes con SaaS.</span>
+              </div>
+            </div>
+            <div className="flex gap-3 items-start bg-gray-800/90 border border-white/20 rounded-xl p-4">
+              <span className="text-2xl">📣</span>
+              <div>
+                <strong className="text-white">Creadores</strong><br/>
+                <span className="text-gray-300">Monetiza tu audiencia con valor.</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Diferenciador */}
+      <section className="px-6 py-20 bg-gradient-to-b from-slate-800 to-slate-900">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-6 text-white">🧠 ¿Qué hace diferente esta plataforma?</h2>
+          <p className="text-xl text-gray-300">
+            <em>"Advento es como tener un equipo de marketing completo, funcionando 24/7 por ti… y por tus clientes."</em> Ahora puedes revender esa potencia <strong className="text-yellow-400">bajo tu marca</strong>.
+          </p>
+        </div>
+      </section>
+
+      {/* Pasos */}
+      <section className="px-6 py-20">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-8 text-white">🔓 Empezar es fácil</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Card className="bg-gray-800/90 border-white/20 text-center">
+              <CardContent className="pt-6">
+                <Badge className="bg-yellow-400/20 text-yellow-400 border-yellow-400/30 mb-4">1</Badge>
+                <h3 className="text-xl font-bold text-white mb-3">Acceso White Label</h3>
+                <p className="text-gray-300">Recibe tu plataforma lista.</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-gray-800/90 border-white/20 text-center">
+              <CardContent className="pt-6">
+                <Badge className="bg-yellow-400/20 text-yellow-400 border-yellow-400/30 mb-4">2</Badge>
+                <h3 className="text-xl font-bold text-white mb-3">Personaliza</h3>
+                <p className="text-gray-300">Colores, logo y dominio propios.</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-gray-800/90 border-white/20 text-center">
+              <CardContent className="pt-6">
+                <Badge className="bg-yellow-400/20 text-yellow-400 border-yellow-400/30 mb-4">3</Badge>
+                <h3 className="text-xl font-bold text-white mb-3">Vende</h3>
+                <p className="text-gray-300">Lanza planes y atrae clientes.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Bonos */}
+      <section className="px-6 py-20 bg-gradient-to-b from-slate-800 to-slate-900">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-8 text-white">🎁 Bono especial (solo hoy)</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="bg-gray-800/90 border-white/20 text-center">
+              <CardContent className="pt-6">
+                <h3 className="text-lg font-bold text-white mb-2">✨ Plantillas</h3>
+                <p className="text-gray-300">Cierra a tus primeros clientes.</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-gray-800/90 border-white/20 text-center">
+              <CardContent className="pt-6">
+                <h3 className="text-lg font-bold text-white mb-2">📣 Scripts</h3>
+                <p className="text-gray-300">Prospección y ventas probadas.</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-gray-800/90 border-white/20 text-center">
+              <CardContent className="pt-6">
+                <h3 className="text-lg font-bold text-white mb-2">🧑‍🏫 Mini curso</h3>
+                <p className="text-gray-300">Onboarding paso a paso.</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-gray-800/90 border-white/20 text-center">
+              <CardContent className="pt-6">
+                <h3 className="text-lg font-bold text-white mb-2">🎨 Branding editable</h3>
+                <p className="text-gray-300">Kit listo para personalizar.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Final */}
       <section className="px-6 py-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">
-            <span className="text-white">¿Listo para </span>
-            <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
-              comenzar a ganar?
-            </span>
-          </h2>
-          
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Únete a nuestro programa de partners premium y comienza a generar ingresos recurrentes hoy mismo
-          </p>
-          
-          <p className="text-2xl font-bold bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent mb-8">
-            🎉 Si te registras hoy, ¡es completamente GRATIS!
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-gradient-to-r from-yellow-400 to-orange-400 text-black font-semibold hover:from-yellow-500 hover:to-orange-500 text-lg px-8 py-4">
-              <Crown className="w-5 h-5 mr-2" />
-              Aplicar al PPP
+          <div className="bg-gradient-to-br from-yellow-500/10 to-green-500/10 rounded-3xl p-12 border border-yellow-500/20">
+            <Badge className="bg-yellow-400/20 text-yellow-400 border-yellow-400/30 mb-6">Cupos limitados este mes</Badge>
+            <h2 className="text-4xl font-bold mb-6 text-white">
+              🔥 ¡Inicia hoy por solo <span className="bg-gradient-to-r from-yellow-400 to-green-400 bg-clip-text text-transparent">$297 USD/mes</span>!
+            </h2>
+            <p className="text-xl text-gray-300 mb-6">Reserva tu marca y lanza tu agencia en días, no meses.</p>
+            <p className="text-2xl font-bold bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent mb-8">
+              🎉 Si te registras hoy, ¡es completamente GRATIS el primer mes!
+            </p>
+            <Button className="bg-gradient-to-r from-yellow-400 to-green-400 text-slate-900 font-semibold hover:from-yellow-500 hover:to-green-500 text-lg px-10 py-5 mb-4">
+              Quiero mi agencia White Label
             </Button>
-            <Link href="/precios">
-              <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 text-lg px-8 py-4">
-                <Calculator className="w-5 h-5 mr-2" />
-                Ver comisiones detalladas
-              </Button>
-            </Link>
+            <p className="text-gray-400 text-sm">Al hacer clic aceptas nuestros <a href="#terms" className="text-yellow-400 hover:underline">Términos y Condiciones</a>.</p>
           </div>
+        </div>
+      </section>
 
-          <p className="text-gray-400 mt-6 text-sm">
-            * Aplicación sujeta a aprobación. Términos y condiciones aplican.
-          </p>
+      {/* FAQ */}
+      <section className="px-6 py-20 bg-gradient-to-b from-slate-800 to-slate-900">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-8 text-white">❓ Preguntas frecuentes</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Card className="bg-gray-800/90 border-white/20">
+              <CardContent className="p-6">
+                <details>
+                  <summary className="cursor-pointer font-bold text-white mb-3">¿Necesito experiencia técnica?</summary>
+                  <p className="text-gray-300">No. La plataforma llega lista y nosotros te apoyamos con el set-up inicial.</p>
+                </details>
+              </CardContent>
+            </Card>
+            <Card className="bg-gray-800/90 border-white/20">
+              <CardContent className="p-6">
+                <details>
+                  <summary className="cursor-pointer font-bold text-white mb-3">¿Puedo poner mi dominio y logo?</summary>
+                  <p className="text-gray-300">Sí. Todo corre bajo tu marca (dominio, logo y colores).</p>
+                </details>
+              </CardContent>
+            </Card>
+            <Card className="bg-gray-800/90 border-white/20">
+              <CardContent className="p-6">
+                <details>
+                  <summary className="cursor-pointer font-bold text-white mb-3">¿Cómo cobro a mis clientes?</summary>
+                  <p className="text-gray-300">Integra tu pasarela preferida y crea planes o suscripciones.</p>
+                </details>
+              </CardContent>
+            </Card>
+            <Card className="bg-gray-800/90 border-white/20">
+              <CardContent className="p-6">
+                <details>
+                  <summary className="cursor-pointer font-bold text-white mb-3">¿Puedo escalar a muchos clientes?</summary>
+                  <p className="text-gray-300">Totalmente. La plataforma está preparada para crecer contigo.</p>
+                </details>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
     </div>
