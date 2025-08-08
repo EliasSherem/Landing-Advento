@@ -28,11 +28,36 @@ export default function RegistroPage() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
+    try {
+      // Send data to n8n webhook
+      const response = await fetch('https://n8n.srv845751.hstgr.cloud/webhook/zalo', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          email: formData.email,
+          phone: formData.phone,
+          timestamp: new Date().toISOString()
+        })
+      })
 
-    // Redirect to success page or dashboard
-    router.push('/registro/exito')
+      if (response.ok) {
+        // Redirect to success page
+        router.push('/registro/exito')
+      } else {
+        console.error('Error submitting form:', response.statusText)
+        // Still redirect to success page for better UX
+        router.push('/registro/exito')
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      // Still redirect to success page for better UX
+      router.push('/registro/exito')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -118,7 +143,7 @@ export default function RegistroPage() {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-gradient-to-r from-yellow-400 to-green-400 text-slate-900 font-semibold hover:from-yellow-500 hover:to-green-500 py-4 text-lg"
+                      className=" flex w-full bg-gradient-to-r from-yellow-400 to-green-400 text-slate-900 font-semibold hover:from-yellow-500 hover:to-green-500 py-4 text-lg"
                     >
                       {isSubmitting ? (
                         <div className="flex items-center">
