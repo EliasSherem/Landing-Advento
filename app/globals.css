@@ -119,5 +119,11 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Sora', sans-serif;
   }
+}
+
+/* Ensure Sora font is applied to all text elements */
+h1, h2, h3, h4, h5, h6, p, span, div, button, input, textarea, label, a {
+  font-family: 'Sora', sans-serif;
 }
