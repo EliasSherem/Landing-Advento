@@ -116,21 +116,7 @@ export default function RegistroPage() {
                           placeholder="Tu nombre"
                         />
                       </div>
-                      <div>
-                        <Label htmlFor="lastName" className="text-gray-300 flex items-center mb-3">
-                          <User className="w-4 h-4 mr-2" />
-                          Apellido *
-                        </Label>
-                        <Input
-                          id="lastName"
-                          name="lastName"
-                          required
-                          value={formData.lastName}
-                          onChange={handleInputChange}
-                          className="bg-gray-700 border-gray-600 text-white focus:border-yellow-400"
-                          placeholder="Tu apellido"
-                        />
-                      </div>
+                      
                     </div>
                     <div>
                       <Label htmlFor="email" className="text-gray-300 flex items-center mb-3">

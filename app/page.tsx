@@ -637,9 +637,14 @@ const Footer = () => (
         <div className="space-y-4">
           <div className="flex items-center space-x-2 mb-6">
             <div className="w-8 h-8 bg-gradient-to-r from-yellow-400 to-green-400 rounded flex items-center justify-center">
-              <span className="text-slate-900 font-bold text-sm">A</span>
+              <img src="/advento-profile1.jpg" alt="Advento" className="w-full h-full object-contain" />
             </div>
-            <span className="text-xl font-semibold text-white">Advento</span>
+            <img
+              src="/LOGO-BLANCO-2.png"
+              alt="Advento"
+              className="object-contain"
+              style={{ width: "120px", height: "auto", maxHeight: "80px" }}
+            />
           </div>
           <div className="flex flex-wrap gap-6">
             <a href="#" className="hover:text-white transition-colors">
@@ -648,12 +653,7 @@ const Footer = () => (
             <a href="#" className="hover:text-white transition-colors">
               Política de Privacidad
             </a>
-            <a href="#" className="hover:text-white transition-colors">
-              Soporte
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
-              Estado del Sistema
-            </a>
+
           </div>
         </div>
         <div className="text-right">
