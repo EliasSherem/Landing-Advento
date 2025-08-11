@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Sparkles, User, Mail, Phone, ArrowRight, Check, Shield, Clock } from 'lucide-react'
+import { Sparkles, User, Mail, Phone, ArrowRight, Check, Shield, Clock, Building2 } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import Header from "@/components/header"
 
@@ -16,7 +16,8 @@ export default function RegistroPage() {
     firstName: '',
     lastName: '',
     email: '',
-    phone: ''
+    phone: '',
+    businessType: ''
   })
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,6 +40,7 @@ export default function RegistroPage() {
           firstName: formData.firstName,
           email: formData.email,
           phone: formData.phone,
+          businessType: formData.businessType,
           timestamp: new Date().toISOString()
         })
       })
@@ -90,7 +92,7 @@ export default function RegistroPage() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="firstName" className="text-gray-300 flex items-center">
+                        <Label htmlFor="firstName" className="text-gray-300 flex items-center mb-3">
                           <User className="w-4 h-4 mr-2" />
                           Nombre Completo *
                         </Label>
@@ -107,7 +109,7 @@ export default function RegistroPage() {
                       
                     </div>
                     <div>
-                      <Label htmlFor="email" className="text-gray-300 flex items-center">
+                      <Label htmlFor="email" className="text-gray-300 flex items-center mb-3">
                         <Mail className="w-4 h-4 mr-2" />
                         Correo Electrónico *
                       </Label>
@@ -124,7 +126,7 @@ export default function RegistroPage() {
                     </div>
                     
                     <div>
-                      <Label htmlFor="phone" className="text-gray-300 flex items-center">
+                      <Label htmlFor="phone" className="text-gray-300 flex items-center mb-3">
                         <Phone className="w-4 h-4 mr-2" />
                         Teléfono *
                       </Label>
@@ -138,6 +140,24 @@ export default function RegistroPage() {
                         className="bg-gray-700 border-gray-600 text-white focus:border-yellow-400"
                         placeholder="+52 123 456 7890"
                       />
+                    </div>
+
+                    <div>
+                      <Label htmlFor="businessType" className="text-gray-300 flex items-center mb-3">
+                        <Building2 className="w-4 h-4 mr-2" />
+                        Elige producto
+                      </Label>
+                      <select
+                        id="businessType"
+                        name="businessType"
+                        value={formData.businessType}
+                        onChange={(e) => setFormData(prev => ({ ...prev, businessType: e.target.value }))}
+                        className="w-full bg-gray-700 border border-gray-600 text-white focus:border-yellow-400 rounded-md px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-yellow-400/50"
+                      >
+                        <option value="">Selecciona el producto de tu interes</option>
+                        <option value="starter">STARTER</option>
+                        <option value="ppp">PPP</option>
+                      </select>
                     </div>
 
                     <Button
@@ -182,13 +202,7 @@ export default function RegistroPage() {
                 
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-green-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <Check className="w-4 h-4 text-black" />
-                    </div>
-                    <div>
-                      <h3 className="text-white font-semibold">Demo personalizada gratuita</h3>
-                      <p className="text-gray-300">Sesión de 30 minutos para conocer Advento</p>
-                    </div>
+                    
                   </div>
                   
                   <div className="flex items-start space-x-3">
@@ -202,13 +216,6 @@ export default function RegistroPage() {
                   </div>
                   
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-green-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <Check className="w-4 h-4 text-black" />
-                    </div>
-                    <div>
-                      <h3 className="text-white font-semibold">Consultoría inicial</h3>
-                      <p className="text-gray-300">Análisis gratuito de tu estrategia actual</p>
-                    </div>
                   </div>
                   
                   <div className="flex items-start space-x-3">

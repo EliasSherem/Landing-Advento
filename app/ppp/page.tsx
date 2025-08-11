@@ -20,7 +20,7 @@ export default function PPPPage() {
                 <Badge className="bg-green-400/20 text-green-400 border-green-400/30">Sin experiencia técnica</Badge>
               </div>
               <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 text-white">
-                Lanza tu propia agencia de marketing automatizada
+                Conviertete en partner de el sistema más avanzado de marketing
               </h1>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                 Convierte el poder de la inteligencia artificial en tu negocio y genera ingresos desde el primer día con una plataforma White Label bajo tu marca.
@@ -124,7 +124,7 @@ export default function PPPPage() {
       <section className="px-6 py-20 bg-gradient-to-b from-slate-900 to-slate-800">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-6 text-white">🚀 ¿Qué es esto?</h2>
-          <p className="text-xl text-gray-300 mb-8">Con nuestra solución White Label de Advento tendrás una plataforma <strong className="text-white">todo-en-uno</strong> para vender marketing bajo tu marca.</p>
+          <p className="text-xl text-gray-300 mb-8">Con nuestra solución White Label de Advento STARTER tendrás una plataforma <strong className="text-white">todo-en-uno</strong> para vender marketing bajo tu marca.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="flex gap-3 items-start bg-gray-800/90 border border-white/20 rounded-xl p-4">
               <span className="text-green-400">✅</span>
@@ -197,7 +197,7 @@ export default function PPPPage() {
             <Card className="bg-gray-800/90 border-white/20">
               <CardContent className="pt-6">
                 <h3 className="text-xl font-bold text-white mb-3">🧩 Integraciones clave</h3>
-                <p className="text-gray-300">Google, Meta, TikTok, Shopify, y más.</p>
+                <p className="text-gray-300">Google, Meta, TikTok, y más.</p>
               </CardContent>
             </Card>
           </div>
@@ -208,32 +208,16 @@ export default function PPPPage() {
       <section className="px-6 py-20 bg-gradient-to-b from-slate-800 to-slate-900">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-6 text-white">💰 ¿Cuánto puedes ganar?</h2>
-          <p className="text-xl text-gray-300 mb-8">Tú decides cuánto cobrar. Con márgenes de hasta el <strong className="text-yellow-400">98%</strong>, el límite lo pones tú.</p>
+          <p className="text-2xl text-gray-300 mb-8">Tú decides cuánto cobrar. Con márgenes de hasta el <strong className="text-yellow-400 text-3xl">98%</strong></p>
+          
           <div className="overflow-x-auto">
-            <table className="w-full bg-gray-800 border border-gray-600 rounded-lg shadow-xl">
-              <thead>
-                <tr className="border-gray-700">
-                  <th className="text-white font-semibold p-4 text-left bg-gray-700">Clientes activos</th>
-                  <th className="text-white font-semibold p-4 text-left bg-gray-700">Ingreso mensual (USD)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-gray-700">
-                  <td className="text-white p-4">10</td>
-                  <td className="text-white p-4">$1,000 – $3,000</td>
-                </tr>
-                <tr className="border-gray-700">
-                  <td className="text-white p-4">50</td>
-                  <td className="text-white p-4">$5,000 – $15,000</td>
-                </tr>
-                <tr className="border-gray-700">
-                  <td className="text-white p-4">100</td>
-                  <td className="text-white p-4">$10,000+</td>
-                </tr>
-              </tbody>
-            </table>
+          <div className="w-full bg-gradient-to-r from-yellow-400 via-green-400 to-cyan-400 rounded-2xl py-10 px-6 mb-8 flex items-center justify-center shadow-lg">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 text-center drop-shadow-lg">
+              ¡El límite lo pones tú! 🫵
+
+            </h1>
           </div>
-          <p className="text-gray-400 text-sm mt-4">Ejemplos estimados. Tus resultados pueden variar según precios y mezcla de servicios.</p>
+          </div>
         </div>
       </section>
 

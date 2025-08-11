@@ -14,10 +14,12 @@ export default function Header() {
       <nav className="flex items-center justify-between max-w-7xl mx-auto">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-gradient-to-r from-yellow-400 to-green-400 rounded flex items-center justify-center">
-            <span className="text-slate-900 font-bold text-sm">A</span>
+          <div className="w-8 h-8  rounded flex items-center justify-center">
+            <img src="/advento-profile1.jpg" alt="Advento Logo" className="w-full h-full object-cover rounded" />
           </div>
-          <span className="text-xl font-semibold">Advento</span>
+          <div className="w-32 h-8 rounded overflow-hidden flex items-center justify-center">
+            <img src="/LOGO-BLANCO-2.png" alt="Advento" className="w-full h-full object-cover" />
+          </div>
         </Link>
 
         {/* Desktop Navigation - Simplified */}
