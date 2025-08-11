@@ -1,10 +1,10 @@
-'use client'
+"use client"
 
-import { useState } from 'react'
-import Link from 'next/link'
-import { ChevronDown, Menu, X } from 'lucide-react'
-import { CartIcon } from './cart-icon'
-import { Button } from '@/components/ui/button'
+import { useState } from "react"
+import Link from "next/link"
+import { Menu, X } from "lucide-react"
+import { CartIcon } from "./cart-icon"
+import { Button } from "@/components/ui/button"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -27,11 +27,11 @@ export default function Header() {
           <Link href="/" className="text-green-400 hover:text-green-300 transition-colors">
             Inicio
           </Link>
-          
+
           <Link href="/ppp" className="text-gray-300 hover:text-white transition-colors">
             PPP
           </Link>
-          
+
           <Link href="/registro" className="text-gray-300 hover:text-white transition-colors">
             Registro
           </Link>
@@ -40,7 +40,7 @@ export default function Header() {
         {/* Cart and CTA */}
         <div className="hidden md:flex items-center space-x-4">
           <CartIcon />
-          <Link href="/registro">
+          <Link href="/registro?plan=starter">
             <Button className="bg-gradient-to-r from-green-400 to-cyan-400 text-slate-900 font-semibold hover:from-green-500 hover:to-cyan-500 transition-all duration-200">
               Empezar Ahora
             </Button>
@@ -48,10 +48,7 @@ export default function Header() {
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden text-white p-2"
-        >
+        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-white p-2">
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </nav>
@@ -63,18 +60,18 @@ export default function Header() {
             <Link href="/" className="text-white hover:text-yellow-400 transition-colors">
               Inicio
             </Link>
-            
+
             <Link href="/ppp" className="text-white hover:text-yellow-400 transition-colors">
               PPP
             </Link>
-            
+
             <Link href="/registro" className="text-white hover:text-yellow-400 transition-colors">
               Registro
             </Link>
 
             <div className="flex items-center space-x-4 pt-4">
               <CartIcon />
-              <Link href="/registro">
+              <Link href="/registro?plan=starter">
                 <Button className="bg-gradient-to-r from-green-400 to-cyan-400 text-slate-900 font-semibold hover:from-green-500 hover:to-cyan-500 transition-all duration-200">
                   Empezar Ahora
                 </Button>
