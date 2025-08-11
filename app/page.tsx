@@ -647,13 +647,12 @@ const Footer = () => (
             />
           </div>
           <div className="flex flex-wrap gap-6">
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="/terminos" className="hover:text-white transition-colors">
               Términos de Servicio
             </a>
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="/privacidad" className="hover:text-white transition-colors">
               Política de Privacidad
             </a>
-
           </div>
         </div>
         <div className="text-right">
