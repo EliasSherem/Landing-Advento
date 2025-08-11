@@ -1,39 +1,73 @@
 "use client"
 
-import { motion, useAnimation } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Card } from "@/components/ui/card";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { useEffect, useMemo, useState } from "react";
-import { Banknote, Cable, Rocket, ShieldCheck, BarChartIcon as ChartBar, PlugZap, UserCheck, Building2, Globe2, CheckCircle2, Sparkles, Wand2, Megaphone, Target, Layers, Clock, SplitSquareHorizontal, Link2 } from 'lucide-react';
-import Header from "@/components/header";
-import Link from "next/link";
+import type React from "react"
+
+import { motion, useAnimation } from "framer-motion"
+import { Button } from "@/components/ui/button"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { Card } from "@/components/ui/card"
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
+import { Badge } from "@/components/ui/badge"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { useEffect, useMemo, useState } from "react"
+import {
+  Banknote,
+  Cable,
+  Rocket,
+  ShieldCheck,
+  BarChartIcon as ChartBar,
+  PlugZap,
+  UserCheck,
+  Building2,
+  Globe2,
+  CheckCircle2,
+  Sparkles,
+  Wand2,
+  Megaphone,
+  Target,
+  Layers,
+  Clock,
+  SplitSquareHorizontal,
+  Link2,
+} from "lucide-react"
+import Header from "@/components/header"
+import Link from "next/link"
 
 const HeroSticker = () => (
   <div className="absolute bottom-0 right-0 transform translate-x-8 translate-y-8 rotate-12 hover:scale-105 transition-transform select-none z-20 pointer-events-none">
     <div className="bg-white/90 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-lg border border-yellow-400/30">
-      <span className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-green-400 bg-clip-text text-transparent">$0/mes</span>
+      <span className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-green-400 bg-clip-text text-transparent">
+        $0/mes
+      </span>
     </div>
   </div>
-);
+)
 
 const GradientHeading = ({ children }: { children: React.ReactNode }) => (
-  <span className="bg-gradient-to-r from-yellow-400 via-green-400 to-cyan-400 bg-clip-text text-transparent">{children}</span>
-);
+  <span className="bg-gradient-to-r from-yellow-400 via-green-400 to-cyan-400 bg-clip-text text-transparent">
+    {children}
+  </span>
+)
 
 const InfoBar = () => (
   <div className="sticky top-0 z-30 border-b border-slate-700 bg-slate-800/80 backdrop-blur supports-[backdrop-filter]:bg-slate-800/60">
     <div className="container mx-auto py-2 text-sm flex items-center justify-center gap-6 text-gray-300">
-      <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-green-400" /><span>Transparencia total</span></div>
-      <div className="flex items-center gap-2"><UserCheck className="h-4 w-4 text-green-400" /><span>Sin contrato</span></div>
-      <div className="flex items-center gap-2"><Banknote className="h-4 w-4 text-green-400" /><span>Tú controlas el presupuesto</span></div>
+      <div className="flex items-center gap-2">
+        <ShieldCheck className="h-4 w-4 text-green-400" />
+        <span>Transparencia total</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <UserCheck className="h-4 w-4 text-green-400" />
+        <span>Sin contrato</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <Banknote className="h-4 w-4 text-green-400" />
+        <span>Tú controlas el presupuesto</span>
+      </div>
     </div>
   </div>
-);
+)
 
 const CreateInSeconds = () => (
   <section id="crear-en-segundos" className="relative z-10 px-6 py-20 bg-slate-900">
@@ -42,14 +76,31 @@ const CreateInSeconds = () => (
         <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">
           <GradientHeading>Crea campañas en segundos</GradientHeading>
         </h2>
-        <p className="text-xl text-gray-300">Todo lo que puedes hacer con nuestro whitelabel Starter para lanzar campañas rápido en Meta, Google y TikTok.</p>
+        <p className="text-xl text-gray-300">
+          Todo lo que puedes hacer con nuestro whitelabel Starter para lanzar campañas rápido en Meta, Google y TikTok.
+        </p>
       </div>
 
       <Tabs defaultValue="meta" className="w-full">
         <TabsList className="mb-8 bg-slate-800 border border-slate-700">
-          <TabsTrigger value="meta" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-400 data-[state=active]:to-cyan-400 data-[state=active]:text-slate-900">Meta</TabsTrigger>
-          <TabsTrigger value="google" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-400 data-[state=active]:to-cyan-400 data-[state=active]:text-slate-900">Google</TabsTrigger>
-          <TabsTrigger value="tiktok" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-400 data-[state=active]:to-cyan-400 data-[state=active]:text-slate-900">TikTok</TabsTrigger>
+          <TabsTrigger
+            value="meta"
+            className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-400 data-[state=active]:to-cyan-400 data-[state=active]:text-slate-900"
+          >
+            Meta
+          </TabsTrigger>
+          <TabsTrigger
+            value="google"
+            className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-400 data-[state=active]:to-cyan-400 data-[state=active]:text-slate-900"
+          >
+            Google
+          </TabsTrigger>
+          <TabsTrigger
+            value="tiktok"
+            className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-400 data-[state=active]:to-cyan-400 data-[state=active]:text-slate-900"
+          >
+            TikTok
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value="meta">
@@ -236,16 +287,19 @@ const CreateInSeconds = () => (
 
       <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {[
-          { title: 'Plantillas multi‑plataforma', icon: Layers, color: 'from-blue-400 to-cyan-400' },
-          { title: 'Automatizaciones y reglas', icon: Clock, color: 'from-green-400 to-emerald-400' },
-          { title: 'A/B testing integrado', icon: SplitSquareHorizontal, color: 'from-purple-400 to-pink-400' },
-          { title: 'Un click, múltiples redes', icon: Link2, color: 'from-yellow-400 to-orange-400' },
-          { title: 'Brand safety y roles', icon: ShieldCheck, color: 'from-red-400 to-pink-400' },
-          { title: 'Reportes en tiempo real', icon: ChartBar, color: 'from-indigo-400 to-purple-400' },
-          { title: 'Integraciones', icon: PlugZap, color: 'from-teal-400 to-cyan-400' },
-          { title: 'Control de permisos', icon: UserCheck, color: 'from-emerald-400 to-green-400' },
+          { title: "Plantillas multi‑plataforma", icon: Layers, color: "from-blue-400 to-cyan-400" },
+          { title: "Automatizaciones y reglas", icon: Clock, color: "from-green-400 to-emerald-400" },
+          { title: "A/B testing integrado", icon: SplitSquareHorizontal, color: "from-purple-400 to-pink-400" },
+          { title: "Un click, múltiples redes", icon: Link2, color: "from-yellow-400 to-orange-400" },
+          { title: "Brand safety y roles", icon: ShieldCheck, color: "from-red-400 to-pink-400" },
+          { title: "Reportes en tiempo real", icon: ChartBar, color: "from-indigo-400 to-purple-400" },
+          { title: "Integraciones", icon: PlugZap, color: "from-teal-400 to-cyan-400" },
+          { title: "Control de permisos", icon: UserCheck, color: "from-emerald-400 to-green-400" },
         ].map((f, i) => (
-          <Card key={i} className="p-6 rounded-2xl bg-white text-slate-900 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+          <Card
+            key={i}
+            className="p-6 rounded-2xl bg-white text-slate-900 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+          >
             <div className="flex items-center gap-3">
               <div className={`w-10 h-10 bg-gradient-to-r ${f.color} rounded-lg flex items-center justify-center`}>
                 <f.icon className="h-5 w-5 text-white" />
@@ -257,8 +311,12 @@ const CreateInSeconds = () => (
       </div>
 
       <div className="mt-12 text-center">
-        <Button className="bg-gradient-to-r from-green-400 to-cyan-400 text-slate-900 font-semibold hover:from-green-500 hover:to-cyan-500 px-8 py-4 text-lg" size="lg" asChild>
-          <Link href="/registro">
+        <Button
+          className="bg-gradient-to-r from-green-400 to-cyan-400 text-slate-900 font-semibold hover:from-green-500 hover:to-cyan-500 px-8 py-4 text-lg"
+          size="lg"
+          asChild
+        >
+          <Link href="/registro?plan=starter">
             <Sparkles className="w-5 h-5 mr-2" />
             Activar Starter Gratis
           </Link>
@@ -266,12 +324,12 @@ const CreateInSeconds = () => (
       </div>
     </div>
   </section>
-);
+)
 
 const FeeCalculator = () => {
-  const [spend, setSpend] = useState(1000);
-  const fee = useMemo(() => Math.round(spend * 0.2), [spend]);
-  const total = spend + fee;
+  const [spend, setSpend] = useState(1000)
+  const fee = useMemo(() => Math.round(spend * 0.2), [spend])
+  const total = spend + fee
 
   return (
     <section id="calculadora" className="relative z-10 px-6 py-20 bg-slate-900">
@@ -292,60 +350,83 @@ const FeeCalculator = () => {
                 max={100000}
                 step={100}
                 value={spend}
-                onChange={(e) => setSpend(parseInt(e.target.value))}
+                onChange={(e) => setSpend(Number.parseInt(e.target.value))}
                 className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-green-400"
               />
               <div className="mt-6 flex items-center gap-4">
-                <Input 
-                  type="number" 
-                  value={spend} 
-                  onChange={(e) => setSpend(parseInt(e.target.value || '0'))} 
+                <Input
+                  type="number"
+                  value={spend}
+                  onChange={(e) => setSpend(Number.parseInt(e.target.value || "0"))}
                   className="text-lg"
                 />
-                <Button className="bg-gradient-to-r from-green-400 to-cyan-400 text-slate-900 font-semibold hover:from-green-500 hover:to-cyan-500 px-6 py-3" asChild>
-                  <Link href="/registro">Activar Starter Gratis</Link>
+                <Button
+                  className="bg-gradient-to-r from-green-400 to-cyan-400 text-slate-900 font-semibold hover:from-green-500 hover:to-cyan-500 px-6 py-3"
+                  asChild
+                >
+                  <Link href="/registro?plan=starter">Activar Starter Gratis</Link>
                 </Button>
               </div>
             </div>
             <div className="rounded-2xl p-6 bg-gradient-to-br from-green-400/10 to-cyan-400/10 border border-green-400/20">
               <ul className="space-y-4 text-left">
-                <li className="text-lg">Tu inversión en anuncios: <strong className="text-green-600">${spend.toLocaleString()}</strong></li>
-                <li className="text-lg">Nuestra comisión (20%): <strong className="text-green-600">${spend.toLocaleString()} × 0.20 = ${fee.toLocaleString()}</strong></li>
-                <li className="text-xl border-t border-green-400/20 pt-4">Costo total: <strong className="text-green-600">${total.toLocaleString()}</strong></li>
+                <li className="text-lg">
+                  Tu inversión en anuncios: <strong className="text-green-600">${spend.toLocaleString()}</strong>
+                </li>
+                <li className="text-lg">
+                  Nuestra comisión (20%):{" "}
+                  <strong className="text-green-600">
+                    ${spend.toLocaleString()} × 0.20 = ${fee.toLocaleString()}
+                  </strong>
+                </li>
+                <li className="text-xl border-t border-green-400/20 pt-4">
+                  Costo total: <strong className="text-green-600">${total.toLocaleString()}</strong>
+                </li>
               </ul>
             </div>
           </div>
         </Card>
       </div>
     </section>
-  );
-};
+  )
+}
 
 const Metrics = () => {
-  const controls = useAnimation();
-  const [scope, setScope] = useState<HTMLElement | null>(null);
+  const controls = useAnimation()
+  const [scope, setScope] = useState<HTMLElement | null>(null)
 
   useEffect(() => {
-    if (!scope) return;
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) controls.start({ opacity: 1, y: 0 });
-      });
-    }, { threshold: 0.3 });
-    observer.observe(scope);
-    return () => observer.disconnect();
-  }, [controls, scope]);
+    if (!scope) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) controls.start({ opacity: 1, y: 0 })
+        })
+      },
+      { threshold: 0.3 },
+    )
+    observer.observe(scope)
+    return () => observer.disconnect()
+  }, [controls, scope])
 
   return (
     <section className="relative z-10 px-6 py-20 bg-slate-900" ref={setScope}>
       <div className="max-w-6xl mx-auto">
-        <motion.div initial={{ opacity: 0, y: 12 }} animate={controls} transition={{ duration: 0.6 }} className="grid md:grid-cols-3 gap-8">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={controls}
+          transition={{ duration: 0.6 }}
+          className="grid md:grid-cols-3 gap-8"
+        >
           {[
-            { label: "+1.2k campañas lanzadas", icon: Rocket }, 
-            { label: "65% ahorro de tiempo", icon: ChartBar }, 
-            { label: "3.8k cuentas conectadas", icon: PlugZap }
+            { label: "+1.2k campañas lanzadas", icon: Rocket },
+            { label: "65% ahorro de tiempo", icon: ChartBar },
+            { label: "3.8k cuentas conectadas", icon: PlugZap },
           ].map((m, i) => (
-            <Card key={i} className="p-6 rounded-2xl bg-white text-slate-900 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <Card
+              key={i}
+              className="p-6 rounded-2xl bg-white text-slate-900 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            >
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-green-400 to-cyan-400 rounded-xl flex items-center justify-center">
                   <m.icon className="h-6 w-6 text-white" />
@@ -357,22 +438,25 @@ const Metrics = () => {
         </motion.div>
       </div>
     </section>
-  );
-};
+  )
+}
 
 const Features = () => (
   <section className="relative z-10 px-6 py-20 bg-slate-900">
     <div className="max-w-6xl mx-auto">
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
-          { title: 'Dashboard unificado', icon: ChartBar, color: 'from-blue-400 to-cyan-400' },
-          { title: 'Plantillas y automatizaciones', icon: PlugZap, color: 'from-green-400 to-emerald-400' },
-          { title: 'Reportes en tiempo real', icon: Globe2, color: 'from-purple-400 to-pink-400' },
-          { title: 'Integraciones con tus redes', icon: Cable, color: 'from-yellow-400 to-orange-400' },
-          { title: 'Soporte prioritario', icon: UserCheck, color: 'from-red-400 to-pink-400' },
-          { title: 'Seguridad y roles', icon: ShieldCheck, color: 'from-indigo-400 to-purple-400' },
+          { title: "Dashboard unificado", icon: ChartBar, color: "from-blue-400 to-cyan-400" },
+          { title: "Plantillas y automatizaciones", icon: PlugZap, color: "from-green-400 to-emerald-400" },
+          { title: "Reportes en tiempo real", icon: Globe2, color: "from-purple-400 to-pink-400" },
+          { title: "Integraciones con tus redes", icon: Cable, color: "from-yellow-400 to-orange-400" },
+          { title: "Soporte prioritario", icon: UserCheck, color: "from-red-400 to-pink-400" },
+          { title: "Seguridad y roles", icon: ShieldCheck, color: "from-indigo-400 to-purple-400" },
         ].map((f, i) => (
-          <Card key={i} className="p-6 rounded-2xl bg-white text-slate-900 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+          <Card
+            key={i}
+            className="p-6 rounded-2xl bg-white text-slate-900 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+          >
             <div className="flex items-center gap-4">
               <div className={`w-12 h-12 bg-gradient-to-r ${f.color} rounded-xl flex items-center justify-center`}>
                 <f.icon className="h-6 w-6 text-white" />
@@ -384,7 +468,7 @@ const Features = () => (
       </div>
     </div>
   </section>
-);
+)
 
 const Testimonials = () => (
   <section className="relative z-10 px-6 py-20 bg-slate-900">
@@ -394,16 +478,23 @@ const Testimonials = () => (
           <GradientHeading>Impacto y prueba social</GradientHeading>
         </h2>
         <div className="text-right">
-          <Button className="bg-gradient-to-r from-green-400 to-cyan-400 text-slate-900 font-semibold hover:from-green-500 hover:to-cyan-500 px-6 py-3" asChild>
-            <Link href="/registro">Activar Starter Gratis</Link>
+          <Button
+            className="bg-gradient-to-r from-green-400 to-cyan-400 text-slate-900 font-semibold hover:from-green-500 hover:to-cyan-500 px-6 py-3"
+            asChild
+          >
+            <Link href="/registro?plan=starter">Activar Starter Gratis</Link>
           </Button>
         </div>
       </div>
       <div className="grid md:grid-cols-3 gap-8">
         {[
-          { quote: '"Escalamos sin costos fijos."', company: 'Acme Co.', author: 'María González, CMO' },
-          { quote: '"Reportes claros y decisiones más rápidas."', company: 'Globex', author: 'Carlos Ruiz, Director Marketing' },
-          { quote: '"Soporte humano real. 10/10."', company: 'Umbrella', author: 'Ana López, Fundadora' },
+          { quote: '"Escalamos sin costos fijos."', company: "Acme Co.", author: "María González, CMO" },
+          {
+            quote: '"Reportes claros y decisiones más rápidas."',
+            company: "Globex",
+            author: "Carlos Ruiz, Director Marketing",
+          },
+          { quote: '"Soporte humano real. 10/10."', company: "Umbrella", author: "Ana López, Fundadora" },
         ].map((t, i) => (
           <Card key={i} className="p-8 rounded-2xl bg-white text-slate-900 shadow-lg">
             <div className="mb-6">
@@ -425,7 +516,7 @@ const Testimonials = () => (
       </div>
     </div>
   </section>
-);
+)
 
 const Comparison = () => (
   <section className="relative z-10 px-6 py-20 bg-slate-900">
@@ -441,7 +532,7 @@ const Comparison = () => (
           </div>
           <p className="text-xl mb-6 text-green-600 font-semibold">$0/mes + 20% ad spend</p>
           <ul className="space-y-3">
-            {['Sin contrato', 'Transparencia total', 'Soporte humano'].map((t) => (
+            {["Sin contrato", "Transparencia total", "Soporte humano"].map((t) => (
               <li key={t} className="flex items-center gap-3">
                 <CheckCircle2 className="h-5 w-5 text-green-500" />
                 <span className="text-lg">{t}</span>
@@ -456,7 +547,7 @@ const Comparison = () => (
           </div>
           <p className="text-xl mb-6 text-gray-400">$49–$299/mes + cargos extra</p>
           <ul className="space-y-3">
-            {['Períodos anuales', 'Cargos ocultos', 'Soporte limitado'].map((t) => (
+            {["Períodos anuales", "Cargos ocultos", "Soporte limitado"].map((t) => (
               <li key={t} className="flex items-center gap-3">
                 <CheckCircle2 className="h-5 w-5 text-gray-500" />
                 <span className="text-lg text-gray-300">{t}</span>
@@ -467,7 +558,7 @@ const Comparison = () => (
       </div>
     </div>
   </section>
-);
+)
 
 const CTAColorBand = () => (
   <section className="relative z-10 py-16">
@@ -478,8 +569,12 @@ const CTAColorBand = () => (
             <h3 className="text-2xl md:text-3xl font-bold mb-2">Empieza hoy por $0</h3>
             <p className="text-xl">Paga solo cuando corres anuncios.</p>
           </div>
-          <Button className="bg-white text-slate-900 hover:bg-gray-100 font-semibold shadow-lg px-8 py-4 text-lg" size="lg" asChild>
-            <Link href="/registro">
+          <Button
+            className="bg-white text-slate-900 hover:bg-gray-100 font-semibold shadow-lg px-8 py-4 text-lg"
+            size="lg"
+            asChild
+          >
+            <Link href="/registro?plan=starter">
               <Sparkles className="w-5 h-5 mr-2" />
               Activar Starter Gratis
             </Link>
@@ -488,7 +583,7 @@ const CTAColorBand = () => (
       </div>
     </div>
   </section>
-);
+)
 
 const FAQ = () => (
   <section className="relative z-10 px-6 py-20 bg-slate-900">
@@ -497,38 +592,43 @@ const FAQ = () => (
         <GradientHeading>Preguntas Frecuentes</GradientHeading>
       </h2>
       <Accordion type="single" collapsible className="max-w-4xl mx-auto">
-        {[{
-          q: '¿Qué es "ad spend"?', 
-          a: 'Es el presupuesto que inviertes directamente en las plataformas de anuncios como Meta, Google, TikTok, etc. Nosotros no tocamos ese dinero, solo cobramos una comisión del 20% sobre lo que efectivamente gastes.'
-        },{
-          q: '¿Cuándo se cobra el 20%?', 
-          a: 'Mensualmente, sobre el ad spend efectivamente invertido. Si no corres anuncios un mes, no pagas nada. Si gastas $1000 en anuncios, pagas $200 de comisión.'
-        },{
-          q: '¿Hay permanencia o contrato?', 
-          a: 'No, puedes cancelar cuando quieras sin penalizaciones. No hay contratos anuales ni compromisos de permanencia.'
-        },{
-          q: '¿Puedo agregar add‑ons después?', 
-          a: 'Sí. Los add‑ons como Cliento, Botento y Agento se activan desde el Hub y requieren tener Starter activo. Cada uno tiene su propio costo mensual.'
-        },{
-          q: '¿Qué plataformas de anuncios soportan?', 
-          a: 'Meta (Facebook e Instagram), Google Ads, TikTok Ads, LinkedIn Ads, Twitter Ads y Pinterest Ads. Constantemente agregamos más plataformas.'
-        },{
-          q: '¿Qué tipo de soporte incluye?', 
-          a: 'Soporte prioritario por chat y email. También tienes acceso a nuestra base de conocimientos y tutoriales en video.'
-        }].map((f, i) => (
+        {[
+          {
+            q: '¿Qué es "ad spend"?',
+            a: "Es el presupuesto que inviertes directamente en las plataformas de anuncios como Meta, Google, TikTok, etc. Nosotros no tocamos ese dinero, solo cobramos una comisión del 20% sobre lo que efectivamente gastes.",
+          },
+          {
+            q: "¿Cuándo se cobra el 20%?",
+            a: "Mensualmente, sobre el ad spend efectivamente invertido. Si no corres anuncios un mes, no pagas nada. Si gastas $1000 en anuncios, pagas $200 de comisión.",
+          },
+          {
+            q: "¿Hay permanencia o contrato?",
+            a: "No, puedes cancelar cuando quieras sin penalizaciones. No hay contratos anuales ni compromisos de permanencia.",
+          },
+          {
+            q: "¿Puedo agregar add‑ons después?",
+            a: "Sí. Los add‑ons como Cliento, Botento y Agento se activan desde el Hub y requieren tener Starter activo. Cada uno tiene su propio costo mensual.",
+          },
+          {
+            q: "¿Qué plataformas de anuncios soportan?",
+            a: "Meta (Facebook e Instagram), Google Ads, TikTok Ads, LinkedIn Ads, Twitter Ads y Pinterest Ads. Constantemente agregamos más plataformas.",
+          },
+          {
+            q: "¿Qué tipo de soporte incluye?",
+            a: "Soporte prioritario por chat y email. También tienes acceso a nuestra base de conocimientos y tutoriales en video.",
+          },
+        ].map((f, i) => (
           <AccordionItem value={`faq-${i}`} key={i} className="border-b border-slate-700">
             <AccordionTrigger className="text-white hover:text-green-400 text-left text-lg font-semibold py-6">
               {f.q}
             </AccordionTrigger>
-            <AccordionContent className="text-gray-300 text-base leading-relaxed pb-6">
-              {f.a}
-            </AccordionContent>
+            <AccordionContent className="text-gray-300 text-base leading-relaxed pb-6">{f.a}</AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>
     </div>
   </section>
-);
+)
 
 const Footer = () => (
   <footer className="border-t border-slate-700 py-12 mt-20 bg-slate-900">
@@ -542,30 +642,42 @@ const Footer = () => (
             <span className="text-xl font-semibold text-white">Advento</span>
           </div>
           <div className="flex flex-wrap gap-6">
-            <a href="#" className="hover:text-white transition-colors">Términos de Servicio</a>
-            <a href="#" className="hover:text-white transition-colors">Política de Privacidad</a>
-            <a href="#" className="hover:text-white transition-colors">Soporte</a>
-            <a href="#" className="hover:text-white transition-colors">Estado del Sistema</a>
+            <a href="#" className="hover:text-white transition-colors">
+              Términos de Servicio
+            </a>
+            <a href="#" className="hover:text-white transition-colors">
+              Política de Privacidad
+            </a>
+            <a href="#" className="hover:text-white transition-colors">
+              Soporte
+            </a>
+            <a href="#" className="hover:text-white transition-colors">
+              Estado del Sistema
+            </a>
           </div>
         </div>
         <div className="text-right">
           <p className="text-base leading-relaxed">
-            <strong className="text-white">Starter es gratis.</strong> ADVENTO cobra una comisión del 20% sobre el ad spend gestionado. Los add‑ons se contratan por separado.
+            <strong className="text-white">Starter es gratis.</strong> ADVENTO cobra una comisión del 20% sobre el ad
+            spend gestionado. Los add‑ons se contratan por separado.
           </p>
         </div>
       </div>
     </div>
   </footer>
-);
+)
 
 export default function Starter() {
   useEffect(() => {
-    document.title = "Lanza campañas en 3 clicks con STARTER, GRATIS";
-    const meta = document.querySelector('meta[name="description"]');
+    document.title = "Lanza campañas en 3 clicks con STARTER, GRATIS"
+    const meta = document.querySelector('meta[name="description"]')
     if (meta) {
-      meta.setAttribute("content", "Crea y lanza campañas en Meta, Google y TikTok en segundos con Starter. $0/mes, pagas 20% de ad spend.");
+      meta.setAttribute(
+        "content",
+        "Crea y lanza campañas en Meta, Google y TikTok en segundos con Starter. $0/mes, pagas 20% de ad spend.",
+      )
     }
-  }, []);
+  }, [])
 
   return (
     <div className="min-h-screen bg-slate-900 text-white relative overflow-hidden">
@@ -580,12 +692,15 @@ export default function Starter() {
       </div>
 
       <Header />
-      
+
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden">
-          <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(250,204,21,0.25),transparent_40%),radial-gradient(ellipse_at_bottom_left,rgba(34,197,94,0.25),transparent_40%)]" />
-          
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(250,204,21,0.25),transparent_40%),radial-gradient(ellipse_at_bottom_left,rgba(34,197,94,0.25),transparent_40%)]"
+          />
+
           {/* Laptop background image */}
           <div className="absolute right-[-10%] top-1/2 -translate-y-1/2 w-full h-full hidden lg:block pointer-events-none">
             <img
@@ -595,7 +710,7 @@ export default function Starter() {
               loading="eager"
             />
           </div>
-          
+
           <div className="relative z-10 px-6 pt-20 pb-32">
             <div className="max-w-6xl mx-auto">
               <div className="max-w-4xl">
@@ -613,23 +728,36 @@ export default function Starter() {
                   Sin costos fijos. Sin líos. Solo crece.
                 </p>
                 <p className="text-xl text-gray-300 mb-12 max-w-3xl leading-relaxed">
-                  Activa ADVENTO Starter sin pagar suscripción. Escalamos contigo; tú controlas el presupuesto, nosotros solo cobramos el 20% de lo que inviertas en anuncios.
+                  Activa ADVENTO Starter sin pagar suscripción. Escalamos contigo; tú controlas el presupuesto, nosotros
+                  solo cobramos el 20% de lo que inviertas en anuncios.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-start items-start relative">
-                  <Button className="bg-gradient-to-r from-green-400 to-cyan-400 text-slate-900 font-semibold hover:from-green-500 hover:to-cyan-500 px-8 py-4 text-lg" size="lg" asChild>
-                    <Link href="/registro">
+                  <Button
+                    className="bg-gradient-to-r from-green-400 to-cyan-400 text-slate-900 font-semibold hover:from-green-500 hover:to-cyan-500 px-8 py-4 text-lg"
+                    size="lg"
+                    asChild
+                  >
+                    <Link href="/registro?plan=starter">
                       <Sparkles className="w-5 h-5 mr-2" />
                       Activar Starter Gratis
                     </Link>
                   </Button>
-                  <Button variant="outline" className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg" size="lg" asChild>
+                  <Button
+                    variant="outline"
+                    className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg bg-transparent"
+                    size="lg"
+                    asChild
+                  >
                     <a href="#crear-en-segundos">Ver cómo funciona</a>
                   </Button>
                 </div>
                 <HeroSticker />
                 <div className="mt-8 flex flex-wrap gap-3 text-sm">
-                  {['Sin contrato', 'Cancela cuando quieras', 'Transparencia total'].map((c) => (
-                    <span key={c} className="border border-green-400/30 bg-green-400/10 text-green-400 rounded-full px-4 py-2">
+                  {["Sin contrato", "Cancela cuando quieras", "Transparencia total"].map((c) => (
+                    <span
+                      key={c}
+                      className="border border-green-400/30 bg-green-400/10 text-green-400 rounded-full px-4 py-2"
+                    >
                       {c}
                     </span>
                   ))}
@@ -648,7 +776,7 @@ export default function Starter() {
         <Comparison />
         <CTAColorBand />
         <FAQ />
-        
+
         <section className="relative z-10 px-6 py-20 text-center bg-slate-900">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-bold mb-8">
@@ -656,13 +784,21 @@ export default function Starter() {
               <GradientHeading>sin costos fijos?</GradientHeading>
             </h2>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button className="bg-gradient-to-r from-green-400 to-cyan-400 text-slate-900 font-semibold hover:from-green-500 hover:to-cyan-500 px-8 py-4 text-lg" size="lg" asChild>
-                <Link href="/registro">
+              <Button
+                className="bg-gradient-to-r from-green-400 to-cyan-400 text-slate-900 font-semibold hover:from-green-500 hover:to-cyan-500 px-8 py-4 text-lg"
+                size="lg"
+                asChild
+              >
+                <Link href="/registro?plan=starter">
                   <Sparkles className="w-5 h-5 mr-2" />
                   Activar Starter Gratis
                 </Link>
               </Button>
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg" size="lg">
+              <Button
+                variant="outline"
+                className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg bg-transparent"
+                size="lg"
+              >
                 Hablar con un asesor
               </Button>
             </div>
@@ -672,5 +808,5 @@ export default function Starter() {
         <Footer />
       </main>
     </div>
-  );
+  )
 }
