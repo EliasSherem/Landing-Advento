@@ -28,7 +28,7 @@ export default function RegistroPage() {
     if (planParam && (planParam === "starter" || planParam === "ppp")) {
       setFormData((prev) => ({ ...prev, businessType: planParam }))
     }
-  }, [searchParams])
+  }, [searchParams.get("plan")]) // Only depend on the actual plan value, not the entire searchParams object
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
