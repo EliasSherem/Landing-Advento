@@ -647,12 +647,24 @@ const Footer = () => (
             />
           </div>
           <div className="flex flex-wrap gap-6">
-            <Link href="/terminos" className="hover:text-white transition-colors">
-              Términos de Servicio
-            </Link>
-            <Link href="/privacidad" className="hover:text-white transition-colors">
-              Política de Privacidad
-            </Link>
+            <button
+              onClick={() => window.location.href = "/terminos"}
+              className="hover:text-white transition-colors bg-transparent border-none p-0 m-0 text-inherit cursor-pointer"
+              style={{ background: "none", textDecoration: "none" }}
+              tabIndex={0}
+              type="button"
+            >
+              Términos de servicio
+            </button>
+            <button
+              onClick={() => window.location.href = "/privacidad"}
+              className="hover:text-white transition-colors bg-transparent border-none p-0 m-0 text-inherit cursor-pointer"
+              style={{ background: "none", textDecoration: "none" }}
+              tabIndex={0}
+              type="button"
+            >
+              Política de privacidad
+            </button>
           </div>
         </div>
         <div className="text-right">
@@ -681,7 +693,7 @@ export default function Starter() {
   return (
     <div className="min-h-screen bg-slate-900 text-white relative overflow-hidden">
       {/* Decorative background elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden z-0">
         <div className="absolute top-20 left-8 w-3 h-3 bg-green-400 rounded-full opacity-60"></div>
         <div className="absolute top-40 right-20 w-4 h-4 bg-cyan-400 rounded-full opacity-40"></div>
         <div className="absolute bottom-40 left-20 w-2 h-2 bg-green-300 rounded-full opacity-50"></div>
