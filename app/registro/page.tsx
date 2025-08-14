@@ -41,7 +41,7 @@ export default function RegistroPage() {
 
     try {
       // Send data to n8n webhook
-      const response = await fetch("https://n8n.srv845751.hstgr.cloud/webhook/zalo", {
+      const response = await fetch("https://sheremelias.app.n8n.cloud/webhook-test/plai", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
